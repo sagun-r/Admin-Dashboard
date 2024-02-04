@@ -81,10 +81,50 @@ a {
 }
 
 .right-header {
+  padding-top: 15px;
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 0.5fr 3fr 0.5fr 0.7fr 1fr;
   grid-template-rows: 50px 100px;
   border: 1px solid;
+}
+
+.right-header > .fa-magnifying-glass,
+.fa-bell {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  font-size: 1.3em;
+}
+
+.right-header > #search {
+  margin: 10px 10px;
+  font-size: 1.2em;
+  border: 0;
+  border-radius: 13px;
+  height: 30px;
+  width: 90%;
+  padding-left: 5px;
+  background-color: beige;
+  box-shadow: inset 0px 0px 45px -69px rgba(0, 0, 0, 1);
+}
+
+.right-header > .profile-pic {
+  align-self: center;
+  height: 50px;
+  border-radius: 30px;
+  margin-left: 28px;
+}
+
+.right-header > .user-name {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.right-header > .welcome-profile-pic {
+  height: 90px;
+  border-radius: 60px;
 }
 
 .right-body {
