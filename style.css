@@ -1,6 +1,11 @@
 :root {
-  --accent-color: #50729b;
-  --primary-color: #faf9f9;
+  --hero-color: #02265ef1;
+  --accent-color: #fbbc04;
+  --body-color: #ffffff;
+  --sidebar-font-color: #ffffff;
+  --secondary-font-color: #3c4043;
+  --card-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  --h3-font-weight: 500;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
     sans-serif;
 }
@@ -12,17 +17,17 @@
 }
 
 .container {
-  height: 100vh;
   display: grid;
-  grid-template-columns: 250px 3fr;
-  grid-template-rows: 1fr 6fr;
+  grid-template-columns: 300px 1fr;
+  grid-template-rows: 0.4fr auto;
 }
 
 .sidebar {
   display: grid;
   padding-top: 15px;
   grid-row: 1 / span2;
-  background-color: var(--accent-color);
+  background-color: var(--hero-color);
+  height: auto;
 }
 
 .sidebar ul {
@@ -30,13 +35,13 @@
 }
 
 .sidebar a {
-  color: var(--primary-color);
+  color: var(--body-color);
   text-decoration: none;
 }
 
 .sidebar-link:hover a {
-  background-color: var(--primary-color);
-  color: var(--accent-color);
+  background-color: var(--accent-color);
+  color: var(--hero-color);
   transition-duration: 0.5s;
 }
 
@@ -97,19 +102,20 @@
 }
 
 .right-header {
+  z-index: 1;
   padding-left: 30px;
   padding-top: 15px;
   padding-right: 70px;
   display: grid;
   grid-template-columns: 50px 3fr 0.5fr 0.5fr 0.5fr;
   grid-template-rows: 50px 110px;
+  box-shadow: rgba(2, 57, 105, 0.172) 0px 10px 20px;
 }
 
 .fa-magnifying-glass,
 .fa-bell {
   display: inline-flex;
   font-size: 1.3em;
-  border: solid red;
 }
 
 .right-header > #search {
@@ -163,8 +169,8 @@
 }
 
 .right-header > button {
-  background-color: var(--accent-color);
-  color: var(--primary-color);
+  background-color: var(--hero-color);
+  color: var(--body-color);
   padding: 12px 5px;
   margin-top: 33px;
   margin-right: 15px;
@@ -179,20 +185,26 @@ button:hover {
 }
 
 .right-body {
+  height: 98vh;
   display: grid;
   grid-template-columns: 3fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 0.4fr 0.43fr;
+  margin-top: 10px;
   padding: 15px;
   grid-column: 2;
   grid-row: 2 /3;
+  background-color: var(--body-color);
+  gap: 20px;
+}
 
-  background-color: var(--primary-color);
-  gap: 15px;
+h3 {
+  font-weight: var(--h3-font-weight);
 }
 
 .project-container {
   grid-column: 1;
   grid-row: 1/3;
+  height: fit-content;
 }
 
 .project-cards {
@@ -200,30 +212,81 @@ button:hover {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(3, 1fr);
   margin-top: 15px;
-  border: red solid;
-  height: 80vh;
-  gap: 15px;
+  gap: 30px;
 }
 
-.card {
-  border: solid green;
+.project-cards > .card {
+  display: grid;
+  grid-template-rows: 3fr 1fr;
+  padding: 30px 20px;
+  border: 0;
+  box-shadow: var(--card-shadow);
+  border-left: 10px var(--accent-color) solid;
+  border-radius: 10px;
+}
+
+.project-info > span {
+  font-size: 1.1em;
+  font-weight: 600;
+}
+
+.project-info > p {
+  color: var(--secondary-font-color);
+  margin-top: 5px;
+  font-size: 0.95em;
+  font-weight: 400;
+}
+
+.card-buttons {
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  font-size: 1.3em;
+}
+
+.card-buttons i {
+  margin-right: 20px;
+}
+
+.card-buttons a {
+  color: black;
+}
+
+.announcement-container {
+  height: 90%;
 }
 
 .announcement-card {
-  height: 80%;
+  height: inherit;
   padding: 30px 25px;
   display: grid;
   grid-row: repeat(3, 1fr);
-  border: solid black;
+  border: 0;
+  box-shadow: var(--card-shadow);
+  border-radius: 10px;
   margin-top: 15px;
+}
+
+.announcement > p {
+  margin-top: 4px;
+  font-size: 0.9em;
+  color: var(--secondary-font-color);
+}
+
+.trending-container {
+  height: 92.5%;
 }
 
 .trending-card {
   display: grid;
+  height: inherit;
   grid-template-rows: repeat(4, 1fr);
-  border: solid black;
+  border: 0;
+  box-shadow: var(--card-shadow);
+  border-radius: 10px;
   gap: 10px;
-  padding: 30px 25px;
+  padding: 25px 25px;
+  margin-top: 15px;
 }
 
 .trending-profile {
@@ -237,4 +300,16 @@ button:hover {
   height: 50px;
   width: 50px;
   border-radius: 50px;
+}
+
+.trending-card a {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  color: black;
+  text-decoration: none;
+}
+
+.trending-card a:hover {
+  background-color: ;
 }
