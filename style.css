@@ -311,7 +311,12 @@ h3 {
 }
 
 .trending-card a:hover {
-  background-color: ;
+  transition: 0.5s;
+  background-color: rgba(0, 0, 0, 0.053);
+  border-bottom-left-radius: 30px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 .profile-info > span {
