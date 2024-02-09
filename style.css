@@ -16,6 +16,11 @@
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
 .container {
   display: grid;
   grid-template-columns: 300px 1fr;
@@ -23,11 +28,14 @@
 }
 
 .sidebar {
+  z-index: 1;
   display: grid;
   padding-top: 15px;
   grid-row: 1 / span2;
   background-color: var(--hero-color);
-  height: auto;
+  height: 100%;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .sidebar ul {
@@ -102,23 +110,26 @@
 }
 
 .right-header {
-  z-index: 1;
-  padding-left: 30px;
-  padding-top: 15px;
-  padding-right: 70px;
   display: grid;
-  grid-template-columns: 50px 3fr 0.5fr 0.5fr 0.5fr;
-  grid-template-rows: 50px 110px;
-  box-shadow: rgba(2, 57, 105, 0.172) 0px 10px 20px;
+  grid-template-rows: 100px 1fr;
+  padding: 0px 60px 20px 60px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
+.right-header > .header-top {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 50px 3fr 50px 100px 100px;
 }
 
 .fa-magnifying-glass,
 .fa-bell {
-  display: inline-flex;
+  display: flex;
+  justify-content: center;
   font-size: 1.3em;
 }
 
-.right-header > #search {
+.header-top > #search {
   margin: 10px 15px;
   font-size: 1.2em;
   border: 0;
@@ -137,25 +148,26 @@
   margin-left: 28px;
 }
 
-.right-header > .user-name {
-  display: flex;
+.user-name {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.header-bottom {
+  display: grid;
+  grid-template-columns: 90px 3fr 1fr 1fr 1fr 1fr;
   align-items: center;
-  font-weight: 600;
-  letter-spacing: 1px;
 }
 
 .right-header .welcome-profile-pic {
   height: 80px;
   border-radius: 60px;
-  margin-left: 27px;
-  margin-top: 10px;
 }
 
-.right-header > .welcome-msg {
+.header-bottom > .welcome-msg {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-left: 65px;
 }
 
 .welcome-msg > span {
@@ -168,12 +180,11 @@
   font-weight: 600;
 }
 
-.right-header > button {
+.header-bottom button {
   background-color: var(--hero-color);
   color: var(--body-color);
   padding: 12px 5px;
-  margin-top: 33px;
-  margin-right: 15px;
+  margin-left: 5px;
   height: fit-content;
   border-radius: 30px;
   border: 0;
