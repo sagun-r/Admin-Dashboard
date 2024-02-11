@@ -29,11 +29,13 @@ a {
 
 .sidebar {
   z-index: 1;
+  position: sticky;
+  top: 0;
   display: grid;
   padding-top: 15px;
   grid-row: 1 / span2;
   background-color: var(--hero-color);
-  height: 100%;
+  height: 100vh;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
@@ -95,7 +97,7 @@ a {
 }
 
 .sidebar-link {
-  font-size: 1.2em;
+  font-size: 1.4em;
 }
 
 .sidebar-text {
@@ -110,7 +112,11 @@ a {
 }
 
 .right-header {
+  z-index: 1;
+  position: sticky;
+  top: 0;
   display: grid;
+  background-color: var(--body-color);
   grid-template-rows: 100px 1fr;
   padding: 0px 60px 20px 60px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
@@ -120,13 +126,6 @@ a {
   display: grid;
   align-items: center;
   grid-template-columns: 50px 3fr 50px 100px 100px;
-}
-
-.fa-magnifying-glass,
-.fa-bell {
-  display: flex;
-  justify-content: center;
-  font-size: 1.3em;
 }
 
 .header-top > #search {
@@ -151,6 +150,13 @@ a {
 .user-name {
   font-weight: 700;
   letter-spacing: 0.5px;
+}
+
+.fa-magnifying-glass,
+.fa-bell {
+  display: flex;
+  justify-content: center;
+  font-size: 1.3em;
 }
 
 .header-bottom {
